@@ -18,10 +18,12 @@ Basic *nix build instructions:
 	make
 
 Ubuntu Instructions:
-	sudo apt-get update && sudo apt-get install -y git make automake autoconf pkg-config autotools-dev build-essential libboost-all-dev libjansson-dev libssl-dev
+	sudo apt-get update
+	sudo apt-get install -y git
 	cd ~/
-	git clone https://github.com/unitusdev/unitus-cpuminer.git
-	cd unitus-cpuminer
+	git clone https://github.com/Vid0Vid0/unitus-cpuminer-opt
+	cd unitus-cpuminer-opt
+	sudo apt-get install -y libcurl4-openssl-dev make automake autoconf pkg-config autotools-dev build-essential libboost-all-dev libjansson-dev libssl-dev
 	./autogen.sh
 	CFLAGS="-O3 -faggressive-loop-optimizations -falign-loops -mtune=native -march=native" ./configure
 	make

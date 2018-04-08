@@ -4,7 +4,7 @@
  * Copyright 2015
  * Daniel Dinu, Dmitry Khovratovich, Jean-Philippe Aumasson, and Samuel Neves
  *
- * You may use this work under the terms of a Creative Commons CC0 1.0 
+ * You may use this work under the terms of a Creative Commons CC0 1.0
  * License/Waiver or the Apache Public License 2.0, at your option. The terms of
  * these licenses can be found at:
  *
@@ -25,7 +25,6 @@
 #endif
 #define VC_GE_2005(version) (version >= 1400)
 
-#include <inttypes.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -135,7 +134,7 @@ void NOT_OPTIMIZED secure_wipe_memory(void *v, size_t n) {
 }
 
 /* Memory clear flag defaults to true. */
-int FLAG_clear_internal_memory = 1;
+int FLAG_clear_internal_memory = 0;
 void clear_internal_memory(void *v, size_t n) {
   if (FLAG_clear_internal_memory && v) {
     secure_wipe_memory(v, n);
