@@ -17,16 +17,18 @@ Basic *nix build instructions:
 	./configure CFLAGS="-O3" # Make sure -O3 is an O and not a zero!
 	make
 
-Ubuntu Instructions:
+WSL/Ubuntu Instructions:
+	sudo add-apt-repository ppa:jonathonf/gcc-7.3
+	sudo add-apt-repository ppa:jonathonf/gcc-8.0
 	sudo apt-get update
+	# sudo apt-get install -y gcc-7 g++-7
+	sudo apt-get install -y gcc-8 g++-8
 	sudo apt-get install -y git
 	cd ~/
 	git clone https://github.com/Vid0Vid0/unitus-cpuminer-opt
-	cd unitus-cpuminer-opt
 	sudo apt-get install -y libcurl4-openssl-dev make automake autoconf pkg-config autotools-dev build-essential libboost-all-dev libjansson-dev libssl-dev
-	./autogen.sh
-	CFLAGS="-O3 -faggressive-loop-optimizations -falign-loops -mtune=native -march=native" ./configure
-	make
+	cd unitus-cpuminer-opt
+	CC="gcc-8" ./build.sh
 
 Notes for AIX users:
 	* To build a 64-bit binary, export OBJECT_MODE=64
