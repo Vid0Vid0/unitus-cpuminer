@@ -18,12 +18,10 @@ Basic *nix build instructions:
 	make
 
 WSL/Ubuntu Instructions:
-	sudo add-apt-repository ppa:jonathonf/gcc-7.3
-	sudo add-apt-repository ppa:jonathonf/gcc-8.0
+	sudo add-apt-repository -y ppa:jonathonf/gcc-7.3
+	sudo add-apt-repository -y ppa:jonathonf/gcc-8.0
 	sudo apt-get update
-	# sudo apt-get install -y gcc-7 g++-7
-	sudo apt-get install -y gcc-8 g++-8
-	sudo apt-get install -y git
+	sudo apt-get install -y git gcc-8
 	cd ~/
 	git clone https://github.com/Vid0Vid0/unitus-cpuminer-opt
 	sudo apt-get install -y libcurl4-openssl-dev make automake autoconf pkg-config autotools-dev build-essential libboost-all-dev libjansson-dev libssl-dev
